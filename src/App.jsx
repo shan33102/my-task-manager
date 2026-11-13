@@ -153,7 +153,11 @@ export default function App() {
               共 {stats.total} 条任务 · 已完成 {stats.done} 条
             </span>
             <span>
-              {storageMode === 'supabase' ? '数据已保存到 Supabase' : '本地预览中'}
+              {storageMode === 'supabase'
+                ? '数据已保存到 Supabase'
+                : storageMode === 'local'
+                  ? '本地预览中'
+                  : '正在连接…'}
             </span>
           </div>
         </main>
